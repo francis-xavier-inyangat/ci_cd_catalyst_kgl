@@ -21,10 +21,10 @@ const RegisterSchema = new mongoose.Schema({
         unique: true
         
     },
-    password:{
-        type: String,
-        required: true,
-    }
+    // password:{
+    //     type: String,
+    //     required: true,
+    // }
 });
 
 
