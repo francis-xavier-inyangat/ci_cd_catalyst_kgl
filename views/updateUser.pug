@@ -1,0 +1,32 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/updateuser.css')
+  title Registered users
+  
+form(method="POST" action="/users/updateuser?id="+user._id)
+  .logo
+    h2
+        //- img(src='/images/logo.png' alt='')
+ 
+  .title Update User Information
+  .subtitle NB: This is not creating a new user
+  .input-container.ic1
+    input#firstname.input(name="user_name" type='text' placeholder=' ' value=user.user_name)
+    .cut.cut-short
+    label.placeholder(for='user_name') Name
+  .input-container.ic2
+    input#lastname.input(name="position" type='text' placeholder=' ' value=user.position)
+    .cut
+    label.placeholder(for='position') Designtion
+  .input-container.ic2
+    input#braanch.input(name="branch" type='text' placeholder=' ' value=user.branch)
+    .cut.cut-short
+    label.placeholder(for='branch') Branch
+  .input-container.ic2
+    input#email.input(name="regEmail" type='email' placeholder=' ' value=user.regEmail)
+    .cut.cut-short
+    label.placeholder(for='regEmail') Email
+  button.submit(type='submit') Update

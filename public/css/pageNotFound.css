@@ -1,0 +1,42 @@
+body {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+.not-found{
+text-align: center;
+}
+.not-found h2{
+  font-size: 150px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: -15px;
+}
+.not-found h5{
+  font-size: 40px;
+  font-weight: 500;
+  color: red;
+  margin-bottom: 40px;
+}
+.homebtn{
+  padding: 15px 25px;
+  background-color: green;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  width: 140px;
+  margin-bottom: -20%;
+  margin-top: 40px;
+  text-decoration: none;
+}
+.homebtn:hover{
+  background-color: rgb(4, 165, 4);
+  color: yellow;
+  font-size: 16px;
+  cursor: pointer;
+}

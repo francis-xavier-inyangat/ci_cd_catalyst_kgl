@@ -1,0 +1,123 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Bootstrap CSS
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+  // css link
+  // google fonts
+  link(href='https://fonts.googleapis.com/css2?family=Audiowide&family=Oleo+Script+Swash+Caps:wght@700&family=Righteous&family=Yanone+Kaffeesatz:wght@600&display=swap' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css2?family=Audiowide&family=Oleo+Script+Swash+Caps:wght@700&family=Righteous&display=swap' rel='stylesheet')
+  // fontawesome icons
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')
+  // css link
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/salesRecStyle.css')
+  title kgl sales
+// nav bar
+#navbar.nav_head
+  .logo
+    a(href='/')
+      img#slider.img-fluid(src='/images/logo.png' alt='')
+      span Karibu Groceries Limited
+  .navbar
+    ul
+      li
+        a(href='/') Home
+      li
+        a(href='/procurement') Procurement
+      li
+        a(href='/sales') Sales
+      li
+        a.action(href='/login/logout') Log out
+// nav bar
+#container.container-fluid
+  form(method="POST" action="/sales/updatecashsale?id="+cashsale._id name='salesForm')
+    .formTitle
+      h2 Update Cashsales Records
+      p#errorInfo
+      h2
+        span #{user.user_name} | #{user.position} | #{user.branch || "No"} branch
+    // row 1 start
+    .row.gy-3
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          select#produceName.input(name='prodName' type='text' onblur='validProdName()' value=cashsale.prodName)
+            option(value='Default' selected = cashsale.prodName==="") Please select a name of produce
+            option(value='beans' selected = cashsale.prodName==="beans") Beans
+            option(value='maize' selected = cashsale.prodName==="maize") Grain Maize
+            option(value='peas' selected = cashsale.prodName==="pease") Cow Peas
+            option(value='gnuts' selected = cashsale.prodName==="gnuts") G-Nuts
+            option(value='soya' selected = cashsale.prodName==="soya") Soy Beans
+          .cut.cut
+          label.placeholder(for='prodName') Name of Produce 
+      // 2
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          select#produceType.input(name='prodType' type='text' onblur='validProdType()' value=cashsale.prodType)
+            option(value='Default' selected = cashsale.prodType==="") Please select type of produce
+            option(value='cereal' selected = cashsale.prodType==="Cereal") Cereal
+            option(value='grains' selected = cashsale.prodType==="grains") Grain
+            option(value='legumes' selected = cashsale.prodType==="legumes") Grain
+          .cut.cut
+          label.placeholder(for='prodType') Type of Produce 
+    // row 2
+    .row.gy-3
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          input#tonnes.input(name='tonnage' type='text' placeholder=' ' onblur='validTonnage()'  value=cashsale.tonnage)
+          .cut.cut
+          label.placeholder(for='tonnage') Number of Tones 
+      // 2
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          input#buyer.input(name='buyerName' type='text' placeholder=' ' onblur='validateName()'  value=cashsale.buyerName)
+          .cut.cut
+          label.placeholder(for='buyerName') Name of buyer
+    // row 2 ends
+    // row 3
+    .row.gy-3
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          input#amount.input(name='amountPaid' type='text' placeholder=' ' onblur='validateAmount()'  value=cashsale.amountPaid)
+          .cut.cut
+          label.placeholder(for='amountPaid') Amount Paid
+      // 2
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          input#telContact.input(name='buyerContact' type='text' placeholder=' ' onblur='validatePhone()'  value=cashsale.buyerContact)
+          .cut.cut
+          label.placeholder(for='buyerContact') Telephone No.
+    // row 3 ends
+    // row 4
+    .row.gy-3
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          input#saleDate.input(name='date' type='datetime-local' placeholder=' ' required='' onblur='' value=cashsale.date)
+          .cut.cut
+          label.placeholder(for='date') Date and Time
+      // 2
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          input#agent.input(name='salesAgent' type='text' placeholder=' ' onblur='validateAgent()' value=cashsale.salesAgent)
+          .cut.cut
+          label.placeholder(for='salesAgent') Name of Attendant
+    // row 4 ends
+    .row.gy-3
+      .col-md-6.col-12.col1
+        .input-container.ic2
+          .save
+            button.saveBtn(type='submit')
+              | Update Record
+              i#sendIcon.fa.fa-paper-plane(aria-hidden='true')
+      // 2
+      .col-md-6.col-12.col1
+        h2.btns
+          a(href='/credit')
+            i.fa.fa-plus-circle.add(aria-hidden='true')
+            | Credit Sale
+  // Option 1: Bootstrap Bundle with Popper
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')
+  script(src='./js/home.js')
+  script(src='./js/validate.js')

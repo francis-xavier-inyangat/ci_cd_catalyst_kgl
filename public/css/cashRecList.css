@@ -1,0 +1,170 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.container {
+  margin: 3% 2%;
+  /* background-color: red; */
+  @media (min-width: 48em) {
+    margin: 2%;
+  }
+  @media (min-width: 72em) {
+    margin: 2em auto;
+    max-width: 72em;
+  }
+}
+
+.responsive-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-spacing: 0;
+  /* background-color: aqua; */
+
+  @media (min-width: 48em) {
+    font-size: 0.9em;
+  }
+
+  @media (min-width: 15em) {
+    font-size: 1em;
+  }
+}
+caption {
+  font-size: 25px;
+  font-weight: 700;
+  color: #00042f;
+  margin-bottom: 20px;
+}
+
+
+.headings {
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  padding: 0px;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  background-color: #00042f;
+
+  @media (min-width: 48em) {
+    /* // Unhide <thead> on wide viewports */
+    position: relative;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+}
+.headings th {
+  padding: 10px 15px;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+  
+}
+.col1 {
+  font-weight: normal;
+
+  color: red;
+  text-align: left;
+}
+/* data-row styles first child */
+
+.data-row th {
+  padding: 10px 15px;
+  text-align: left;
+}
+/* .data-row:nth-child(odd) {
+  background-color: #f2f3f4;
+}
+.data-row:nth-child(even) {
+  background-color: #ccd1d1;
+} */
+.data-row th,
+td {
+  border-bottom: 2px solid #fff;
+  padding: 1px 10px;
+}
+.data-row:nth-child(even) {
+  background-color: rgb(252, 237, 239);
+  
+}
+.data-row:nth-child(odd) {
+  background-color: #dbeffc;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.data-row:hover{
+  background-color: #bee3fc;
+  font-weight: 500;
+}
+#title {
+  color: green;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  top: 0;
+  bottom: 0;
+  margin-top: 1%;
+  text-transform: uppercase;
+}
+
+/* btns */
+.deleteBtn {
+  background-color: #fff;
+  padding: 8px;
+  width: 110px;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin: 5px;
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+}
+a{
+  text-decoration: none;
+  background-color: #fff;
+  padding: 10px 20px;
+  width: 110px;
+  border: 2px solid green;
+  border-radius: 10px;
+  margin: 5px;
+  color: green;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* on hover */
+.deleteBtn:hover {
+  background-color: red;
+  transition-delay: 0.1ms;
+  transform-style: preserve-3d;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin: 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+  background-color: green;
+  transition-delay: 0.1ms;
+  
+  border: 2px solid rgb(253, 255, 253);
+  border-radius: 10px;
+  margin: 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.logo h2 {
+  text-align: center;
+  margin-top: -20px;
+}
+.logo img {
+  height: 70px;
+  width: 97px;
+}

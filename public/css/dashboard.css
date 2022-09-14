@@ -1,0 +1,80 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+.container{
+    background-image: url('/images/coverkgl.jpg');
+    margin-top: 5px;
+}
+.content-box{
+    text-align: center;
+    /* margin: 25px 10px; */
+    margin-left: 3%;
+    width: 100%;
+    
+  
+}
+.content-box h2, h4{
+    font-size: 26px;
+    text-transform: capitalize;
+    color: #086CFC;
+    
+    font-weight: 900;
+    padding: 8px;
+}
+.content-box h4{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #086CFC;
+    font-weight: 600;
+   
+}
+
+.row{
+    background-color: #fff;
+    /* margin: ; */
+}
+
+.cardbox{
+    height: 200px;
+    width: 100%;
+    background-color: rgba(163, 235, 191, 0.929);
+    margin: 15px;
+    margin-left: 1%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #00042F;
+}
+.cardbox:hover{
+    border: 2px solid rgba(163, 235, 191, 0.79) ;
+    background-color: rgba(163, 235, 191, 0.79);
+}
+.cardbox2{
+    height: 200px;
+    width: 100%;
+    background-color: rgb(193, 214, 228);
+    margin: 15px;
+    margin-left: 1%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #00042F;
+}
+.cardbox2:hover{
+    border: 2px solid  rgba(193, 214, 228, 0.79); ;
+    background-color: rgba(193, 214, 228, 0.79); 
+}
+.btn{
+    text-decoration: none;
+    background-color: #00042F;
+    border: 3px solid #00042f08 ;
+    color: #fefefe;
+    padding: 12px;
+    width: 133px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+h2{
+    color: green;
+}

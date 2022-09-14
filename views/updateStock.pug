@@ -1,0 +1,152 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Bootstrap CSS
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+  // css link
+  // fontawesome icons
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')
+  // google fonts
+  link(href='https://fonts.googleapis.com/css2?family=Audiowide&family=Oleo+Script+Swash+Caps:wght@700&family=Righteous&family=Yanone+Kaffeesatz:wght@600&display=swap' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css2?family=Audiowide&family=Oleo+Script+Swash+Caps:wght@700&family=Righteous&display=swap' rel='stylesheet')
+  // css link
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/procurement.css')
+  title KGL procurement
+// nav bar
+#navbar.nav_head
+  .logo
+    a(href='/')
+      img#slider.img-fluid(src='/images/logo.png' alt='')
+      span Karibu Groceries Limited
+  .navbar
+    ul
+      li
+        a(href='/') Home
+      li
+        a(href='/procurement') Procurement
+      li
+        a(href='/sales') Sales
+      li
+        a.action(href='/login/logout') Log Out
+// nav bar
+#container.container-fluid
+  form(action='/procurement/updatestock?id='+purchase._id method='POST' name='procureForm')
+    .formTitle
+      h2 Update Stock Records
+      p#pageError 
+      h2
+        span #{user.user_name} | #{user.position} | #{user.branch || "No"} branch
+    // bootstrap grid system for the form
+    .container
+      .row.gy-3
+        // col1
+        .col-md-6.col-12.col1
+          .input-container.ic2
+            select#nameofProduce.input(name='consignment' type='text' onblur='newStock()' value=purchase.consignment required='')
+              option(value='') Please select a name of produce
+              option(value='beans') Beans
+              option(value='maize') Grain Maize
+              option(value='peas') Cow Peas
+              option(value='gnuts') G-Nuts
+              option(value='soya') Soy Beans
+            .cut.cut
+            label.placeholder(for='consignment') Name of Produce 
+        // col2
+        .col-md-6.col-12.col2
+          .input-container.ic2
+            select#prodType.input(name='typeofProduce' type='text' onblur='valProdTyp()' required='' value=purchase.typeofProduce)
+              option(value='') Please select type of produce
+              option(value='cereal') Cereal
+              option(value='grains') Grain
+              option(value='legumes') Legume
+              option(value='other_produce') Other
+              // ask ozzy for types
+            .cut.cut
+            label.placeholder(for='typeofProduce') Type of Produce 
+      // row 2
+      .row.gy-3
+        .col-md-6.col-12.col1
+        .col-md-6.col-12.col1
+      // row 2
+      .row.gy-3
+        // col1
+        .col-md-6.col-12.col1
+          .input-container.ic2
+            input#dispatchDate.input(name='dispatchDate' type='date' placeholder=' ' required='' onblur='' value=purchase.dispatchDate)
+            .cut.cut
+            label.placeholder(for='dispatchDate') Date of Stocking
+        // col2
+        .col-md-6.col-12.col2
+          .input-container.ic2
+            input#unitCost.input(name='unitCost' type='text' placeholder=' ' onblur='unitPrice()' value=purchase.unitCost required='')
+            .cut.cut
+            label.placeholder(for='unitCost') Unit selling price
+      // row 3
+      .row.gy-3
+        // col1 name of supllier
+        // col 3
+        .col-md-6.col-12.col3
+          .input-container.ic2
+            input#num_tonnes.input(name='no_kgs' type='text' placeholder=' ' onblur='validateTones()' value=purchase.no_kgs required='')
+            .cut.cut
+            label.placeholder(for='no_kgs') Number of Tones 
+        // col2
+        // col 3
+        .col-md-6.col-12.col3
+          .input-container.ic2
+            input#dateDue.input(name='pay' type='text' placeholder=' ' onblur='amountPaid()' value=purchase.pay required='')
+            .cut.cut
+            label.placeholder(for='pay') Total Amount paid
+        // col 3
+      // row4
+      .row.gy-3
+        .col-md-6.col-12.col2
+          .input-container.ic2
+            select#paymentTerms.input(name='payTerms' type='text' onblur='validModePay()' value=purchase.payTerms required='')
+              option(value='Default') Please select mode of payment
+              option(value='cashTxn') Cash
+              option(value='creditTxn') Deferred Payment (Credit)
+              option(value='otherTxn') Other
+              // ask ozzy for types
+            .cut.cut
+            label.placeholder(for='payTerms') Transaction mode 
+        // col
+        // Optional if cash =>receipt no. || credit => due date || other => explain
+        .col-md-6.col-12.col3
+          #cashTx.input-container.ic2
+            input#receiptNo_.input(name='receiptNum' type='text' placeholder=' ' onblur='vailidReceipt()' value=purchase.receiptNum)
+            .cut.cut
+            label.placeholder(for='receiptNum') Receipt Number
+          // if credit?
+          #creditTx.input-container.ic2
+            input#dueDate.input(name='dueDate' type='date' placeholder=' ' value=purchase.dueDate )
+            .cut.cut-short
+            label.placeholder(for='dueDate') Due Date
+          // if other?
+          #otherTx.input-container.ic2
+            input#otherPay.input(name='otherPay' type='text' placeholder=' ' onblur='otherTranX()' value=purchase.otherPay)
+            .cut.cut-short 
+            label.placeholder(for='otherPay') Explain Transaction
+      // row 5
+      .row.gy-3
+        .col-md-6.col-12.col1
+          .input-container.ic2
+            input#buyer_name.input(name='supplierName' type='text' placeholder=' ' onblur='validBuyer()' value=purchase.supplierName required='')
+            .cut.cut-short
+            label.placeholder(for='supplierName') Name of Supplier
+        // col
+        .col-md-6.col-12.col1
+          .input-container.ic2
+            .save
+              button.saveBtn(type='submit')
+                i.fa.fa-plus-circle.add(aria-hidden='true')
+                | Update Record
+                i#sendIcon.fa.fa-paper-plane(aria-hidden='true')
+    // bottom buttons
+// Option 1: Bootstrap Bundle with Popper
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')
+script(src='/js/home.js')
+script(src='/js/validate.js')

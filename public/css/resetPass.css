@@ -1,0 +1,196 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+#container{
+    background-color:#00042f;
+    /* background-image: url('/images/grins3.jpg');
+    background-size:cover; */
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: auto;
+    margin: 100px 50px;
+    position: static;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 25px 20px;
+    opacity: 1;
+}
+.welcomText{
+    align-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.welcomText h1{
+    font-size: 25px;
+    color: #086CFC;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+
+    font-family: 'Audiowide', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Righteous', cursive;
+}
+.welcomText h3{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+
+    font-family: 'Audiowide', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Righteous', cursive;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.welcomText p{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    word-spacing: 5px;
+
+    font-family: 'Audiowide', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Righteous', cursive;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.welcomText p span a{
+    text-decoration: none;
+
+}
+
+/* login form */
+
+
+/* form */
+form {
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 90%;
+    padding: 20px;
+    width: 320px;
+  }
+ 
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input {
+    /* background-color: #303245; */
+    border: 2px solid #00042F !important;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #00042F;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+  .cut {
+    background-color: #fff;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .placeholder {
+    color: #00042F;
+    font-family: sans-serif;
+    font-style: italic;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #086CFC;
+  }
+  
+  .resetPass {
+  background-color: #00042f;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  color: #086CFC;;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 25px;
+  margin-bottom: 0px;
+
+  
+  text-align: center;
+  width: 100%;
+  }
+  .resetPass:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border: 4px solid #fff;
+    color: #fff;
+    font-weight: 500;
+    background-color: #00042f;
+      
+      }
+      
+  .loginBtn :hover{
+    background-color: red;
+  }
+  .submit:active {
+    background-color: #06b;
+  }
+  .info{
+    font-size: 11px;
+    color: #fc0808;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  

@@ -1,0 +1,184 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+.nav_head{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 5px 20px;
+    background-color: #fff;
+    align-items: center;
+    align-content: center;
+    background-color: #d9e9ff;
+    /* background-color: rgba(216, 214, 214, 0.409); */
+    
+}
+.navbar{
+    padding-right: 50px;
+    /* background-color: #E5F0FF; */
+    border-radius: 15px;
+   
+
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .content {
+    padding-top: 60px;
+  }
+.navbar ul{
+    list-style: none;
+    position: relative;
+    top:0;  
+    margin: 0;  
+    padding-top: 5px; 
+    
+    
+}
+.nav_head li {
+    float: left;
+}
+.navbar ul li a{
+    text-decoration: none;
+    margin-left: 30px;
+    color: white;
+    
+    padding: 15px;
+    margin-bottom: 10px;
+    color: #00042F;
+    font-size: 22px;
+    /* font family at header */
+    font-family: 'Audiowide', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Righteous', cursive;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 600;
+}
+ .action{  
+ border: 2px solid #00042F;
+ border-radius: 10px;  
+ margin-top: 5px;
+ padding: 5px;
+
+ 
+  color: white;  
+  }  
+  .navbar ul li a:hover {  
+    border-bottom: 2px solid #00042F; 
+    color: #086CFC;  
+    
+    font-weight: 100;
+    
+    
+  } 
+  .logo{
+    margin-top: 15px;
+  }
+  .logo a{
+    text-decoration: none;
+    
+   
+  }
+.logo span{
+    color: #00042F;
+    
+    font-size: 26px;
+    font-weight: bold;
+
+
+    font-family: 'Audiowide', cursive;
+font-family: 'Oleo Script Swash Caps', cursive;
+font-family: 'Righteous', cursive;
+    /* text-transform: uppercase; */
+    
+    
+}
+.logo img{
+    height: 55px;
+    width: 75px;
+}
+
+#container{
+    background-color: #00042f;
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+   
+    
+    
+}
+
+.content{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+color: #fff;
+/* position: static; */
+padding-top: 60px;
+
+
+}
+
+.content img{
+    border-top-right-radius:50px ;
+    border-bottom-left-radius:50px ;
+    height: 370px;
+    width:auto;
+    
+
+}
+
+.content_text h2{
+    font-size: 75px;
+    font-weight: 700;
+    align-content: center;
+    text-align: left;
+    line-height: 1.1;
+
+    font-family: 'Audiowide', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Righteous', cursive;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.content_text h2 span{
+    color: #086CFC;
+}
+
+.mission{
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.1;
+    margin-top: 15px;
+    
+    color: #fff;
+    opacity: 1;
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Righteous', cursive;
+    
+}
+.mission span{
+    font-size: 25px;
+    color: #086CFC;
+}
+
+.problem{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: 15px;
+    word-spacing: 2px;
+    color: #D3D4D6;
+    opacity: 0.7;
+    text-align: right;
+    
+}
+
