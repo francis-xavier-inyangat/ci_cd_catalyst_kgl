@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const logger = require("./logger")
 require("dotenv").config();
 
 
@@ -44,6 +45,7 @@ db.once('open', function(){
 
 db.on('error', function(err){
   console.error(err);
+  logger.error(err.message);
 });
 
 
@@ -97,7 +99,11 @@ app.get("*", (req, res) => {
 });
 
 // server
-app.listen(PORT, ()=> console.log(`Listening on Port ${PORT}`))
+app.listen(PORT, ()=> {
+  console.log(`Listening on Port ${PORT}`)
+  logger.info(`server listening on port ${PORT}`)
 
+
+})
 
 
