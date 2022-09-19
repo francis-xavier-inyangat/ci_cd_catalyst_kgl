@@ -1,0 +1,48 @@
+version 2.1
+
+orbs:
+  node: circleci/node@16.16.0
+
+
+jobs:
+  run_tests:
+    docker:
+      -image: xavier16/kglcloud:1.0
+
+    executor: node/default # use the default executor defined within the orb
+    
+    steps:
+    # alias of gitclone
+      -checkout
+      -run:
+        name: Install npm dependancies
+        command: |
+          npm install --save
+
+      -run:
+      name: Run unit tests
+      command: |
+        npm run test
+      # ./node_modules/mocha/bin/mocha test/ --reporter moachawesome --reporter-options reportDir=test-results, reportFilename=test-results
+      
+      -store_test_results:
+        path: test-results
+      -store_artificats:
+        path: test-results
+  
+  workflows:
+  # workflows need jobs
+    jobs:
+      run_tests
+
+
+    
+
+
+
+
+
+
+  
+
+
