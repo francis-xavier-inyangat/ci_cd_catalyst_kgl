@@ -47,11 +47,11 @@ orbs:
 jobs:
   run_tests:
     docker:
-      -image: xavier16/kglcloud:1.0
+      - image: xavier16/kglcloud:1.0
     
     steps:
-    -checkout
-    -run:
+    - checkout
+    - run:
       name: "Install dependacies"
       command: npm install --save
   say-hello:
