@@ -25,6 +25,8 @@ const RegisterSchema = new mongoose.Schema({
     //     type: String,
     //     required: true,
     // }
+
+    // Password is username12345 eg xavier12345, irene12345 etc
 });
 
 

@@ -1,0 +1,2 @@
+{"level":"error","message":"bad auth : Authentication failed.","service":"user-service"}
+{"level":"error","message":"querySrv ETIMEOUT _mongodb._tcp.catalysts-ci-cd.un7l1sk.mongodb.net","service":"user-service"}
