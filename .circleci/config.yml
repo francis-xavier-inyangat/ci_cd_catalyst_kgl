@@ -52,8 +52,8 @@ jobs:
     steps:
     - checkout
     - run:
-      name: "Install dependacies"
-      command: npm install --save
+        name: "Install dependacies"
+        command: "npm install --save"
   say-hello:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
@@ -73,6 +73,7 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - run_tests
 
 
     
