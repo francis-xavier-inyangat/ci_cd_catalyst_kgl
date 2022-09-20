@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha || true",
+    "test": "mocha",
     "start": "nodemon app.js",
     "lint": "eslint"
   },
