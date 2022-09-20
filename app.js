@@ -1,8 +1,10 @@
-const express = require('express')
-const path = require('path')
-const mongoose = require('mongoose')
-const passport = require('passport')
-require('dotenv').config()
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+const passport = require("passport");
+const logger = require("./logger")
+require("dotenv").config();
+
 
 // start x-session
 const expressSession = require('express-session')({
@@ -40,9 +42,11 @@ db.once('open', function () {
   console.log('Connected to MongoDB')
 })
 
-db.on('error', function (err) {
-  console.error(err)
-})
+db.on('error', function(err){
+  console.error(err);
+  logger.error(err.message);
+});
+
 
 // views settings or configurations
 app.set('view engine', 'pug')
@@ -90,4 +94,13 @@ app.get('*', (req, res) => {
 })
 
 // server
-app.listen(PORT, () => console.log(`Listening on Port ${PORT}`))
+
+app.listen(PORT, ()=> {
+  console.log(`Listening on Port ${PORT}`)
+  logger.info(`server listening on port ${PORT}`)
+
+
+})
+
+
+
