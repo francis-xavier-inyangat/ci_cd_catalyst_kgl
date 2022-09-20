@@ -11,7 +11,7 @@ orbs:
 jobs:
   run_tests:
     docker:
-      - image: circleci/node:18.9.0
+      - image: cimg/node:18.9.0
     
     steps:
     - checkout
