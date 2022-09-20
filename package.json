@@ -2,12 +2,12 @@
   "name": "ci_cd_catalyst",
   "version": "16.16.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha || true",
     "start": "nodemon app.js",
     "lint": "eslint"
   },
@@ -29,8 +29,14 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
     "chai": "^4.3.6",
     "eslint": "^8.23.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
     "mocha": "^10.0.0"
   }
 }
