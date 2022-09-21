@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha || true",
+    "test": "nyc mocha --timeout 10000",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "start": "nodemon app.js",
     "lint": "eslint"
   },
@@ -37,6 +38,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.1",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0"
   }
 }

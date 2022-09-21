@@ -1,8 +1,5 @@
-
-
 const assert = require('chai').assert;
 const price = require('../produce');
-
 describe('Finding total price of produce', ()=>{
 
     // // a failing test
