@@ -79,8 +79,9 @@ jobs:
 
       - run:
           name: Run test
-          command: npm test
           
+          command: npm test
+
 
 
 
