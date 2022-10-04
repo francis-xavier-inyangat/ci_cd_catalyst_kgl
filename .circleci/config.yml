@@ -52,7 +52,9 @@ workflows:
   heroku_deploy:
     jobs:
       - build
-      - heroku/deploy-via-git:  
+      
+      - heroku/deploy-via-git: 
+
           requires:
           
             - build
@@ -74,9 +76,12 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+
       - run:
           name: Run test
+          
           command: npm test
+
 
 
 
